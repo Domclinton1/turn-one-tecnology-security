@@ -115,3 +115,79 @@ const observer = new IntersectionObserver(
 );
 
 cards.forEach((card) => observer.observe(card));
+
+const solutionCards = document.querySelectorAll(".solution-card");
+
+const newObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+solutionCards.forEach((card) => newObserver.observe(card));
+
+const sectorCards = document.querySelectorAll(".sector-card");
+
+const sectorObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        sectorObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+sectorCards.forEach((card) => sectorObserver.observe(card));
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const question = item.querySelector(".faq-question");
+  const answer = item.querySelector(".faq-answer");
+  const icon = item.querySelector(".icon");
+
+  question.addEventListener("click", () => {
+    const isOpen = item.classList.contains("active");
+
+    faqItems.forEach((i) => {
+      i.classList.remove("active");
+      i.querySelector(".faq-answer").style.maxHeight = null;
+      i.querySelector(".icon").textContent = "+";
+    });
+
+    if (!isOpen) {
+      item.classList.add("active");
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      icon.textContent = "−";
+    }
+  });
+});
+
+const sectorImages = [
+  "./assets/sectors/agro.png",
+  "./assets/sectors/construcao.png",
+  "./assets/sectors/energia.png",
+  "./assets/sectors/governo.png",
+];
+
+const section = document.querySelector(".sectors-slider");
+let currentIndex = 0;
+
+function changeBackground() {
+  section.style.backgroundImage = `url(${sectorImages[currentIndex]})`;
+  currentIndex = (currentIndex + 1) % sectorImages.length;
+}
+
+// imagem inicial
+changeBackground();
+
+// troca a cada 5 segundos
+setInterval(changeBackground, 5000);
