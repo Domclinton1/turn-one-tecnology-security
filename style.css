@@ -138,9 +138,36 @@ body {
   margin: 0 auto;
 }
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
+  background-image: url("./assets/banner-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+  overflow: hidden;
 }
+
+/* Overlay sombreado */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.85) 0%,
+    rgba(255, 193, 5, 0.25) 50%,
+    rgba(13, 13, 13, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* Garante que o conteúdo fique acima do sombreado */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -211,6 +238,93 @@ a.cta-whatsapp {
 a.cta-whatsapp:hover {
   transform: scale(1.06);
 }
+.about {
+  background: linear-gradient(180deg, var(--preto) 0%, var(--preto-2) 100%);
+  padding: 100px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-header {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.about-header .tag {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--amarelo);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about-header h2 {
+  font-size: 2.4rem;
+  color: var(--branco);
+  margin-bottom: 16px;
+}
+
+.about-header p {
+  color: var(--branco-2);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.about-card {
+  background: var(--preto-3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-card .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.about-card h3 {
+  color: var(--branco);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  color: var(--branco-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Mobile refinado */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 16px;
+  }
+
+  .about-header h2 {
+    font-size: 2rem;
+  }
+}
+
 .solutions {
   background-color: var(--branco);
   padding-bottom: 50px;
