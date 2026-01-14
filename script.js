@@ -66,3 +66,36 @@ function enviarWhatsApp() {
 
   spans.forEach((span) => observer.observe(span));
 })();
+
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+const navLinks = document.querySelectorAll(".nav a");
+
+function closeMenu() {
+  nav.classList.remove("active");
+  toggle.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  toggle.classList.toggle("active");
+  document.body.style.overflow = nav.classList.contains("active")
+    ? "hidden"
+    : "";
+});
+
+// Fecha ao clicar em qualquer link
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+// Fecha com ESC (desktop / acessibilidade)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+nav.addEventListener("click", (e) => {
+  if (e.target === nav) {
+    closeMenu();
+  }
+});
