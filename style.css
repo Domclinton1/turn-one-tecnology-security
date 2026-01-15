@@ -744,6 +744,36 @@ a.cta-whatsapp:hover {
 .cta-final {
   background-color: var(--branco);
 }
+.cta-final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./assets/banner-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+  overflow: hidden;
+}
+
+/* Overlay sombreado */
+.cta-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.85) 0%,
+    rgba(255, 193, 5, 0.25) 50%,
+    rgba(13, 13, 13, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* Garante que o conteúdo fique acima do sombreado */
+.cta-final > * {
+  position: relative;
+  z-index: 2;
+}
 .cta-title {
   align-items: center;
   text-align: center;
@@ -751,14 +781,14 @@ a.cta-whatsapp:hover {
 }
 .cta-title h2 {
   font-size: 48px;
-  color: var(--preto-2);
+  color: var(--branco);
 }
 .cta-title h2 strong {
   color: var(--amarelo);
 }
 .cta-title p {
   font-size: 22px;
-  color: var(--cinza-foreground);
+  color: var(--branco-3);
 }
 .cta-final .container {
   display: flex;
@@ -785,7 +815,7 @@ a.cta-whatsapp:hover {
 
 .form-whatsapp h2 {
   font-size: 25px;
-  color: var(--preto-2);
+  color: var(--branco-3);
   text-transform: uppercase;
   margin-bottom: 15px;
 }
@@ -812,7 +842,7 @@ a.cta-whatsapp:hover {
 
 .form-whatsapp button {
   background-color: var(--amarelo);
-  color: #1a1a1a;
+  color: var(--branco-3);
   padding: 14px;
   border: none;
   border-radius: 8px;
