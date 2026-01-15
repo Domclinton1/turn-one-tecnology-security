@@ -14,6 +14,8 @@
   --cinza-foreground: #666666;
   --laranja: #ffc1051a;
   --laranja-2: #ffc10533;
+  --techno-orange: #e79903;
+  --techno-organge-rgb: rgb(231.153.0.3);
 }
 html {
   scroll-behavior: smooth;
@@ -386,7 +388,7 @@ a.cta-whatsapp:hover {
 }
 */
 .solutions {
-  background: linear-gradient(180deg, var(--preto) 0%, var(--preto-2) 100%);
+  background: var(--branco-2);
   padding: 100px 20px;
 }
 
@@ -412,12 +414,12 @@ a.cta-whatsapp:hover {
 
 .solutions-header h2 {
   font-size: 36px;
-  color: var(--branco);
+  color: var(--amarelo);
   margin-bottom: 12px;
 }
 
 .solutions-header p {
-  color: var(--branco-2);
+  color: var(--preto-2);
   font-size: 17px;
   line-height: 1.6;
 }
@@ -429,7 +431,7 @@ a.cta-whatsapp:hover {
 }
 
 .solution-card {
-  background: var(--preto-3);
+  background: var(--preto-2);
   border: 1px solid rgba(255, 193, 5, 0.15);
   border-radius: 16px;
   padding: 28px;
