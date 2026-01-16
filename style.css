@@ -275,7 +275,7 @@ a.cta-whatsapp:hover {
   margin-bottom: 16px;
 }
 .about-header h2 strong {
-  color: var(--amarelo);
+  color: var(--preto-2);
 }
 .about-header p {
   color: var(--preto);
@@ -418,7 +418,7 @@ a.cta-whatsapp:hover {
 
 .solutions-header h2 {
   font-size: 36px;
-  color: var(--amarelo);
+  color: var(--preto-2);
   margin-bottom: 12px;
 }
 
@@ -619,7 +619,7 @@ a.cta-whatsapp:hover {
   font-size: 22px;
 }
 .resultados-title h2 strong {
-  color: var(--amarelo);
+  color: var(--preto-2);
 }
 .resultados-grid {
   display: flex;
