@@ -292,7 +292,7 @@ a.cta-whatsapp:hover {
 .about-card {
   background: var(--preto-2);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 32px;
+  /*padding: 32px;*/
   border-radius: 20px;
   transition:
     transform 0.3s ease,
@@ -305,9 +305,13 @@ a.cta-whatsapp:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-
+.about-card-text {
+  padding: 25px;
+}
 .about-card .icon img {
   max-width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .about-card h3 {
