@@ -257,8 +257,8 @@ a.cta-whatsapp:hover {
 
 .about-header .tag {
   display: inline-block;
-  background: var(--laranja);
-  color: var(--amarelo);
+  background: var(--preto-2);
+  color: var(--branco);
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -404,8 +404,8 @@ a.cta-whatsapp:hover {
 
 .solutions-header .tag {
   display: inline-block;
-  background: var(--laranja);
-  color: var(--amarelo);
+  background: var(--preto-2);
+  color: var(--branco);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
@@ -491,8 +491,8 @@ a.cta-whatsapp:hover {
 
 .sectors-header .tag {
   display: inline-block;
-  background: var(--laranja);
-  color: var(--amarelo);
+  background: var(--branco);
+  color: var(--preto-2);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
@@ -674,8 +674,8 @@ a.cta-whatsapp:hover {
 
 .faq-header .tag {
   display: inline-block;
-  background: var(--laranja);
-  color: var(--amarelo);
+  background: var(--preto-2);
+  color: var(--branco);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
