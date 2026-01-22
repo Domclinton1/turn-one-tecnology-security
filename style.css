@@ -1020,3 +1020,162 @@ footer .container {
     background-color: var(--amarelo);
   }
 }
+
+/* Footer base */
+
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Newsletter */
+
+.footer-newsletter {
+  background: #4a4a52;
+  padding: 60px 20px;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.newsletter-text h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.newsletter-text p {
+  color: #ddd;
+  max-width: 400px;
+}
+
+.newsletter-form {
+  display: flex;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: none;
+  outline: none;
+  width: 220px;
+}
+
+.newsletter-form button {
+  background: var(--amarelo);
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Conteúdo principal */
+
+.footer-main {
+  padding: 60px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 20px;
+}
+
+.footer-col p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-col h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: var(--amarelo);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--amarelo);
+}
+
+/* Social */
+
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Bottom */
+
+.footer-bottom {
+  background: #111;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    width: 100%;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+}
