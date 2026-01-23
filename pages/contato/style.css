@@ -1,0 +1,189 @@
+.cta-final {
+  background-color: var(--branco);
+}
+.cta-final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../assets/banner-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+  overflow: hidden;
+}
+
+/* Overlay sombreado */
+.cta-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.85) 0%,
+    rgba(255, 193, 5, 0.25) 50%,
+    rgba(13, 13, 13, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* Garante que o conteúdo fique acima do sombreado */
+.cta-final > * {
+  position: relative;
+  z-index: 2;
+}
+.cta-title {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.cta-title h2 {
+  font-size: 48px;
+  color: var(--branco);
+}
+.cta-title h2 strong {
+  color: var(--amarelo);
+}
+.cta-title p {
+  font-size: 22px;
+  color: var(--branco-3);
+}
+.cta-final .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 50px;
+}
+.form-whatsapp {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+
+  /* Fundo amarelo transparente */
+  background: rgba(255, 193, 5, 0.12); /* amarelo suave */
+  padding: 25px;
+  border-radius: 12px;
+
+  /* efeito elegante */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  animation: techGlow 3.5s infinite;
+}
+
+.form-whatsapp h2 {
+  font-size: 25px;
+  color: var(--branco-3);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.form-whatsapp input,
+.form-whatsapp textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid var(--amarelo);
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-whatsapp input:focus,
+.form-whatsapp textarea:focus {
+  border-color: #e6ac00;
+  box-shadow: 0 0 0 2px rgba(255, 193, 5, 0.3);
+}
+
+.form-whatsapp button {
+  background-color: var(--amarelo);
+  color: var(--branco-3);
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-whatsapp button:hover {
+  background-color: #e6ac00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 193, 5, 0.4);
+}
+footer {
+  background-color: var(--preto-2);
+}
+footer .container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--branco-2);
+  padding: 50px;
+  border-top: 1px solid var(--branco-3);
+}
+.btn-whatsapp {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+.btn-whatsapp img {
+  max-width: 74px;
+  transition: 0.4s;
+  animation: zoomImage 2s infinite;
+}
+.btn-whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+.btn-whatsapp .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  width: 220px;
+  top: 25px;
+  left: -228px;
+  padding: 2px;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+  background-color: var(--amarelo);
+}
+
+.btn-whatsapp:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 193, 5, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(255, 193, 5, 0.6),
+      0 0 40px rgba(255, 193, 5, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 193, 5, 0.3);
+  }
+}
+@keyframes techGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 193, 5, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(255, 193, 5, 0.6),
+      0 0 60px rgba(255, 193, 5, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 193, 5, 0.2);
+  }
+}

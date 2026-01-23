@@ -89,7 +89,7 @@
   <nav class="nav">
     <a href="#solutions">Soluções</a>
     <a href="#resultados">Resultados</a>
-    <a href="#cta-final" class="cta-button">Contato</a>
+    <a href="./contato.html" class="cta-button">Contato</a>
   </nav>
 </header>
 
@@ -733,7 +733,7 @@
         </div>
       </div>
     </section>
-    <footer>
+    
       <footer class="footer">
 
   <!-- Newsletter -->
@@ -761,10 +761,11 @@
     
 
     <div class="footer-container">
-
+      
       <!-- Logo / Contato -->
       <div class="footer-col">
-        <img src="./assets/turn-one-logo.svg" alt="Turn One" class="footer-logo" />
+         <img src="./assets/turn-one-logo.svg" alt="Turn One" class="footer-logo" />
+       
 
         <p><strong>Endereço:</strong><br>
           Belo Horizonte - MG
@@ -775,7 +776,7 @@
         </p>
 
         <p><strong>Telefone:</strong><br>
-          (31) 99999-9999
+          (31) 99760-4789
         </p>
 
         <div class="footer-social">
@@ -805,11 +806,11 @@
         <h4>Institucional</h4>
 
         <ul>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Soluções</a></li>
-          <li><a href="#">Setores</a></li>
-          <li><a href="#">Contato</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#about">Sobre nós</a></li>
+          <li><a href="#solutions">Soluções</a></li>
+          <li><a href="#setores">Setores</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./politicas_de_privacidade.html">Política de Privacidade</a></li>
         </ul>
       </div>
 
@@ -825,13 +826,13 @@
         </p>
       </div>
 
-</footer>
+
 
       <!--
           
    
       -->
- </footer>
+      </footer>
     <a
       class="btn-whatsapp"
       onclick="return gtag_report_conversion();"
@@ -842,6 +843,32 @@
       <img src="./assets/whatssapp-2.svg" alt="Botão whatsapp" />
       <span class="tooltip-text">Agende seu orçamento.</span>
     </a>
+    <div id="cookie-banner">
+  <p>
+    Utilizamos cookies para melhorar sua experiência. 
+    Ao continuar navegando, você concorda com nossa 
+    <a href="politicas_de_privacidade.html" target="_blank">
+      Política de Privacidade
+    </a>.
+  </p>
+
+  <button id="accept-cookies">Aceitar</button>
+</div>
+
     <script src="script.js"></script>
+    <script>
+  const banner = document.getElementById('cookie-banner');
+  const btn = document.getElementById('accept-cookies');
+
+  if (localStorage.getItem('cookiesAccepted')) {
+    banner.style.display = 'none';
+  }
+
+  btn.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner.style.display = 'none';
+  });
+</script>
+
   </body>
 </html>
