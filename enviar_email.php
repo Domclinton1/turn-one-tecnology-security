@@ -51,7 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mail->send();
 
-    echo "ok";
+   $mail->send();
+
+// Redireciona para página de obrigado
+header("Location: obrigado.html");
+exit;
+
 
   } catch (Exception $e) {
     echo "Erro: " . $mail->ErrorInfo;
