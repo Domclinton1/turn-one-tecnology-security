@@ -292,20 +292,36 @@ a.cta-whatsapp:hover {
 
 .about-card {
   background: var(--preto-2);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  /*padding: 32px;*/
-  border-radius: 20px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 193, 5, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 193, 5, 0.15),
+    transparent
+  );
   opacity: 0;
-  transform: translateY(30px);
+  transition: opacity 0.3s;
 }
 
 .about-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--amarelo);
 }
+
+.about-card:hover::before {
+  opacity: 1;
+}
+
 .about-card-text {
   padding: 25px;
 }
@@ -337,7 +353,7 @@ a.cta-whatsapp:hover {
     font-size: 2rem;
   }
 }
-/*
+
 .solutions {
   background-color: var(--branco);
   padding-bottom: 50px;
@@ -362,19 +378,7 @@ a.cta-whatsapp:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
-.solution-card {
-  padding: 24px;
-  border: 1px solid var(--cinza-foreground);
-  border-radius: 15px;
-  box-shadow: 3px 1px 7px var(--cinza-foreground);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  transition: 0.5s;
-}
-.solution-card:hover {
-  transform: scale(1.03);
-}
+
 .solution-img {
   background-color: var(--laranja);
   max-width: fit-content;
@@ -395,8 +399,7 @@ a.cta-whatsapp:hover {
   color: var(--cinza-foreground);
   line-height: 1.1;
 }
-*/
-.solutions {
+*/ .solutions {
   background: var(--branco-2);
   padding: 100px 20px;
 }
@@ -806,6 +809,11 @@ a.cta-whatsapp:hover {
   gap: 2rem;
   padding: 50px;
 }
+@media screen and (max-width: 768px) {
+  .cta-final .container {
+    padding: 20px;
+  }
+}
 .form-whatsapp {
   max-width: 500px;
   margin: 0 auto;
@@ -859,6 +867,30 @@ a.cta-whatsapp:hover {
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.botoes-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.botoes-form button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botoes-form button:first-child {
+  background: var(--amarelo);
+  color: #fff;
+}
+
+.botoes-form button:last-child {
+  background: var(--amarelo);
+  color: #fff;
 }
 
 .form-whatsapp button:hover {

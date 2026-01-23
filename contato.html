@@ -55,18 +55,20 @@
           </p>
         </div>
 
-        <form
-          class="form-whatsapp"
-          id="form-whatsapp"
-          action="enviar.php"
-          method="POST"
-        >
+        <form id="contatoForm" class="form-whatsapp">
           <h2>Solicite uma Demonstração</h2>
-
-          <input type="text" name="nome" placeholder="Seu Nome" required />
 
           <input
             type="text"
+            id="nome"
+            name="nome"
+            placeholder="Seu Nome"
+            required
+          />
+
+          <input
+            type="text"
+            id="empresa"
             name="empresa"
             placeholder="Nome da Empresa"
             required
@@ -74,18 +76,27 @@
 
           <input
             type="tel"
+            id="telefone"
             name="telefone"
-            placeholder="Seu WhatsApp"
+            placeholder="Seu WhatsApp (com DDD)"
             required
           />
 
           <textarea
+            id="mensagem"
             name="mensagem"
             rows="4"
             placeholder="O que você precisa?"
             required
           ></textarea>
-          <button type="submit">Enviar Mensagem</button>
+
+          <div class="botoes-form">
+            <button type="button" onclick="enviarWhatsApp()">
+              Enviar WhatsApp
+            </button>
+
+            <button type="submit">Enviar E-mail</button>
+          </div>
         </form>
       </div>
     </section>
@@ -126,7 +137,10 @@
 
             <p>
               <strong>E-mail:</strong><br />
-              contato@turnone.com.br
+              atendimento@turnone.com.br <br />
+              coordenacao@turnone.com.br <br />
+              financeiro@turnone.com.br <br />
+              comercial@turnone.com.br
             </p>
 
             <p>

@@ -1,32 +1,30 @@
 function enviarWhatsApp() {
-  const nome = document.getElementById("nome").value.trim();
-  const empresa = document.getElementById("empresa").value.trim();
-  const telefone = document.getElementById("telefone").value.trim();
-  const mensagem = document.getElementById("mensagem").value.trim();
+  const nome = document.getElementById("nome").value;
+  const empresa = document.getElementById("empresa").value;
+  const telefone = document.getElementById("telefone").value;
+  const mensagem = document.getElementById("mensagem").value;
 
   if (!nome || !telefone || !mensagem) {
-    alert("Por favor preencha todos os campos!");
+    alert("Preencha os campos obrigatórios!");
     return;
   }
 
-  // Monta mensagem formatada
   const texto = `
-  👤 *Nome:* ${nome}\n
-  🏢 *Empresa:* ${empresa}\n
-  📱 *WhatsApp:* ${telefone}\n
-  ✉️ *Mensagem:* ${mensagem}
+Olá, me chamo ${nome}.
+Empresa: ${empresa}
+Telefone: ${telefone}
+
+Mensagem:
+${mensagem}
   `;
 
-  // Número da empresa com código do país
-  const numeroEmpresa = "5531997604789";
+  const numero = "5531997604789"; // troca pro número do cliente
 
-  // Link para abrir WhatsApp com mensagem pronta
-  const link = `https://wa.me/${numeroEmpresa}?text=${encodeURIComponent(
-    texto
-  )}`;
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-  window.open(link, "_blank");
+  window.open(url, "_blank");
 }
+
 (function () {
   const spans = document.querySelectorAll(".resultado-span");
 
@@ -61,7 +59,7 @@ function enviarWhatsApp() {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   spans.forEach((span) => observer.observe(span));
@@ -111,7 +109,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.2 },
 );
 
 cards.forEach((card) => observer.observe(card));
@@ -127,7 +125,7 @@ const newObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.2 },
 );
 
 solutionCards.forEach((card) => newObserver.observe(card));
@@ -143,7 +141,7 @@ const sectorObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.2 },
 );
 
 sectorCards.forEach((card) => sectorObserver.observe(card));
