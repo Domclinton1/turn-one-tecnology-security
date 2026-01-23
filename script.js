@@ -98,23 +98,7 @@ nav.addEventListener("click", (e) => {
   }
 });
 
-const cards = document.querySelectorAll(".about-card");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.2 },
-);
-
-cards.forEach((card) => observer.observe(card));
-
-const solutionCards = document.querySelectorAll(".solution-card");
+const solutionCards = document.querySelectorAll(".solution-card, .about-card");
 
 const newObserver = new IntersectionObserver(
   (entries) => {
