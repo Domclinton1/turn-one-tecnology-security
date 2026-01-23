@@ -1,0 +1,12 @@
+# Arquivos sensíveis
+config.php
+
+# Pastas locais
+.vscode/
+node_modules/
+
+# Logs
+*.log
+
+# Cache
+.cache/

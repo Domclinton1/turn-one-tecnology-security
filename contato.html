@@ -55,20 +55,18 @@
           </p>
         </div>
 
-        <form id="contatoForm" class="form-whatsapp">
+        <form
+          id="contatoForm"
+          class="form-whatsapp"
+          action="enviar_email.php"
+          method="POST"
+        >
           <h2>Solicite uma Demonstração</h2>
 
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder="Seu Nome"
-            required
-          />
+          <input type="text" name="nome" placeholder="Seu Nome" required />
 
           <input
             type="text"
-            id="empresa"
             name="empresa"
             placeholder="Nome da Empresa"
             required
@@ -76,14 +74,12 @@
 
           <input
             type="tel"
-            id="telefone"
             name="telefone"
             placeholder="Seu WhatsApp (com DDD)"
             required
           />
 
           <textarea
-            id="mensagem"
             name="mensagem"
             rows="4"
             placeholder="O que você precisa?"

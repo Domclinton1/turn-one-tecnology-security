@@ -10,6 +10,7 @@ require 'PHPMailer/src/SMTP.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $nome = $_POST['nome'];
+  $email = $_POST['email'];
   $empresa = $_POST['empresa'];
   $telefone = $_POST['telefone'];
   $mensagem = $_POST['mensagem'];
@@ -22,44 +23,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
 
-    $mail->Username = 'comercial@turnone.com.br'; // email da empresa
-    $mail->Password = 'SENHA_DO_EMAIL';         // senha
+    require 'config.php';
+
+    $mail->Username = EMAIL_USER;
+    $mail->Password = EMAIL_PASS;
+
 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    // Remetente
     $mail->setFrom('comercial@turnone.com.br', 'Turn One');
-
-    // Destino
     $mail->addAddress('comercial@turnone.com.br');
 
-    // Responder para o cliente
-    $mail->addReplyTo($_POST['email'] ?? '', $nome);
+    $mail->addReplyTo($email, $nome);
 
-    // Conteúdo
     $mail->isHTML(true);
-    $mail->Subject = 'Novo contato pelo site';
+    $mail->Subject = 'Novo Lead - Site';
 
     $mail->Body = "
-
-    <h2>Novo Lead - Turn One</h2>
-
-    <p><strong>Nome:</strong> $nome</p>
-    <p><strong>Empresa:</strong> $empresa</p>
-    <p><strong>Telefone:</strong> $telefone</p>
-
-    <p><strong>Mensagem:</strong><br>$mensagem</p>
-
-    ";
-
-    $mail->AltBody = "
-Nome: $nome
-Empresa: $empresa
-Telefone: $telefone
-
-Mensagem:
-$mensagem
+      <h2>Novo Lead</h2>
+      <p><b>Nome:</b> $nome</p>
+      <p><b>Email:</b> $email</p>
+      <p><b>Empresa:</b> $empresa</p>
+      <p><b>Telefone:</b> $telefone</p>
+      <p><b>Mensagem:</b><br>$mensagem</p>
     ";
 
     $mail->send();
@@ -67,8 +54,7 @@ $mensagem
     echo "ok";
 
   } catch (Exception $e) {
-
-    echo "Erro: {$mail->ErrorInfo}";
-
+    echo "Erro: " . $mail->ErrorInfo;
   }
+
 }

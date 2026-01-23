@@ -120,11 +120,10 @@
     <header class="about-header">
       <span class="tag">Quem Somos</span>
       <h2>Por que escolher a <strong>Turn One Technology & Security</strong>?</h2>
-      <p>
-        Desenvolvemos soluções tecnológicas inteligentes para transformar
-        dados em decisões estratégicas, garantindo controle, eficiência
-        operacional e segurança avançada.
-      </p>
+     <p>As soluções móveis da Turn One expandem o videomonitoramento tradicional para operações de transporte com conectividade sem fio, integrando tecnologias analógicas e IP em um portfólio flexível e robusto. Os equipamentos são projetados para operar com alta confiabilidade mesmo em ambientes severos, suportando vibração, poeira e variações de temperatura, garantindo registros seguros para apuração de incidentes e auditorias.
+     </p>
+     <p>Os vídeos podem ser acessados remotamente por redes celulares diretamente dos gravadores móveis, permitindo visualização em tempo real ou sob demanda em uma central de monitoramento, além da exportação de evidências para autoridades quando necessário. O sistema também identifica comportamentos de risco na condução e emite alertas em tempo real aos motoristas, contribuindo para a prevenção de acidentes.</p>
+     <p>Além da tecnologia, a Turn One oferece consultoria especializada em gestão inteligente de frotas, auxiliando empresas na otimização operacional, aumento da segurança e redução de custos, por</p></p>
     </header>
 
     <div class="about-grid">
@@ -293,10 +292,9 @@
 
       <article class="sector-card">
         <div class="sector-icon">🏗️</div>
-        <h3>Construção Civil</h3>
+        <h3>Engenharia</h3>
         <p>
-          Monitoramento preciso de veículos e equipamentos em canteiros de obras,
-          reduzindo desperdícios e elevando a segurança dos trabalhadores.
+         Monitoramento preciso de veículos e equipamentos em canteiros de obras e mineração, reduzindo custos e elevando a segurança da operação.
         </p>
       </article>
 
@@ -523,17 +521,22 @@
           </p>
         </div>
 
-        <form id="contatoForm" class="form-whatsapp">
+        <form
+  id="contatoForm"
+  class="form-whatsapp"
+  action="enviar_email.php"
+  method="POST"
+>
 
   <h2>Solicite uma Demonstração</h2>
 
-  <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+  <input type="text" name="nome" placeholder="Seu Nome" required>
 
-  <input type="text" id="empresa" name="empresa" placeholder="Nome da Empresa" required>
+  <input type="text" name="empresa" placeholder="Nome da Empresa" required>
 
-  <input type="tel" id="telefone" name="telefone" placeholder="Seu WhatsApp (com DDD)" required>
+  <input type="tel" name="telefone" placeholder="Seu WhatsApp (com DDD)" required>
 
-  <textarea id="mensagem" name="mensagem" rows="4" placeholder="O que você precisa?" required></textarea>
+  <textarea name="mensagem" rows="4" placeholder="O que você precisa?" required></textarea>
 
   <div class="botoes-form">
 
@@ -547,7 +550,8 @@
 
   </div>
 
-        </form>
+</form>
+
 
       </div>
     </section>
