@@ -188,7 +188,7 @@ body {
   line-height: 1;
 }
 .hero h1 strong {
-  color: var(--preto-2);
+  color: var(--amarelo);
 }
 .hero p {
   color: var(--branco-2);
